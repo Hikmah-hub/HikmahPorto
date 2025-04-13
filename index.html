@@ -1,284 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portfolio</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
-  <style>
-    body {
-      background-color: #BFDBFE;
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    .file-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #BFDBFE;
-      padding: 0.5rem 1rem;
-      border-radius: 0.5rem 0.5rem 0 0;
-    }
-
-    .file-bar .left, .file-bar .right {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .file-bar span.circle {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      display: inline-block;
-    }
-
-    .file-bar .blue { background-color: #3B82F6; }
-    .file-bar .pink { background-color: #EC4899; }
-
-    .header {
-      background-color: #1E3A8A;
-      text-align: center;
-      padding: 2rem 0;
-    }
-
-    .header h1 {
-      font-size: 4rem;
-      color: #E5E7EB;
-      font-weight: bold;
-      margin: 0;
-      font-family: 'Pacifico', cursive;
-    }
-
-    .header p {
-      color: #E5E7EB;
-      font-size: 1.25rem;
-      margin-top: 0.5rem;
-    }
-
-    .border-top {
-      border-top: 4px solid black;
-    }
-
-    .container {
-      padding: 2rem;
-      flex: 1;
-    }
-
-    .card {
-      background-color: #F3F4F6;
-      padding: 1.5rem;
-      border-radius: 0.5rem;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      position: relative;
-      margin-bottom: 2rem;
-    }
-
-    .card h2, .card h3 {
-      font-size: 1.5rem;
-      font-weight: bold;
-      margin: 0;
-    }
-
-    .card p, .card ul {
-      margin-top: 0.5rem;
-    }
-
-    .card ul {
-      list-style-type: disc;
-      padding-left: 1.5rem;
-    }
-
-    .card .hello {
-      position: absolute;
-      top: 0;
-      left: 0;
-      background-color: #FBBF24;
-      padding: 0.25rem 1rem;
-      border-bottom-right-radius: 0.5rem;
-      font-weight: bold;
-    }
-
-    .card .cv {
-      position: absolute;
-      top: 0;
-      right: 0;
-      background-color: #1E3A8A;
-      padding: 0.25rem 1rem;
-      border-bottom-left-radius: 0.5rem;
-      color: white;
-      font-weight: bold;
-    }
-
-    .card img {
-      display: block;
-      margin: 1rem auto;
-      border-radius: 50%;
-    }
-
-    .resume-title {
-      font-size: 2.5rem;
-      color: #1E3A8A;
-      font-weight: bold;
-    }
-
-    .skills-bar {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 0.5rem;
-    }
-
-    .skills-bar div {
-      width: 24%;
-      height: 0.5rem;
-      background-color: black;
-    }
-
-    .skills-bar div + div {
-      margin-left: 0.25rem;
-    }
-
-    .download-btn {
-      margin-top: 1rem;
-      display: inline-block;
-      background-color: #1E3A8A;
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 0.5rem;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-    }
-
-    .download-btn:hover {
-      background-color: #374151;
-    }
-
-    footer {
-      background-color: #1E3A8A;
-      color: #E5E7EB;
-      text-align: center;
-      padding: 1.5rem 1rem;
-    }
-
-    footer h3 {
-      font-size: 1.25rem;
-      margin-bottom: 0.5rem;
-    }
-
-    footer p {
-      margin: 0.25rem 0;
-    }
-
-    footer img {
-      margin-top: 0.5rem;
-    }
-
-    @media (max-width: 768px) {
-      .header h1 {
-        font-size: 2.5rem;
-      }
-
-      .container {
-        padding: 1rem;
-      }
-
-      .skills-bar {
-        flex-direction: column;
-        gap: 0.5rem;
-      }
-
-      .skills-bar div {
-        width: 100%;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathschool</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+        .custom-bg {
+            background-color: #ff69b4;
+        }
+        .custom-bg-dark {
+            background-color: #000000;
+        }
+        .custom-bg-light {
+            background-color: #ffffff;
+        }
+        .custom-bg-pink {
+            background-color: #ff69b4;
+        }
+        .custom-bg-yellow {
+            background-color: #ffff00;
+        }
+        .custom-bg-blue {
+            background-color: #0000ff;
+        }
+        .custom-text-yellow {
+            color: #ffff00;
+        }
+        .custom-text-pink {
+            color: #ff69b4;
+        }
+        .custom-text-blue {
+            color: #0000ff;
+        }
+        .custom-text-white {
+            color: #ffffff;
+        }
+        .custom-text-black {
+            color: #000000;
+        }
+    </style>
 </head>
-<body>
+<body class="custom-bg">
+    <div class="max-w-screen-xl mx-auto custom-bg-dark text-white">
+        <!-- Header -->
+        <header class="flex justify-between items-center p-4">
+            <div class="text-2xl font-bold">Mathschool</div>
+            <nav class="hidden md:flex space-x-4">
+                <a href="#" class="hover:underline">Главная</a>
+                <a href="#" class="hover:underline">Курсы</a>
+                <a href="#" class="hover:underline">Отзывы</a>
+                <a href="#" class="hover:underline">Контакты</a>
+            </nav>
+            <button class="custom-bg-yellow custom-text-black px-4 py-2 rounded">Купить курс</button>
+        </header>
 
-  <div class="file-bar">
-    <div class="left">
-      <span class="circle blue"></span>
-      <span class="text-sm">kayejiane_portfolio.psd</span>
+        <!-- Hero Section -->
+        <section class="text-center py-12">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Онлайн школа огэ/егэ по математике</h1>
+            <button class="custom-bg-yellow custom-text-black px-6 py-3 rounded mb-4">Купить курс</button>
+            <div class="flex justify-center space-x-2">
+                <div class="w-3 h-3 custom-bg-light rounded-full"></div>
+                <div class="w-3 h-3 custom-bg-light rounded-full"></div>
+                <div class="w-3 h-3 custom-bg-light rounded-full"></div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+            <div class="custom-bg-pink p-4 rounded">
+                <h2 class="font-bold">Сильные преподаватели</h2>
+                <p>Описание преимущества</p>
+            </div>
+            <div class="custom-bg-yellow p-4 rounded">
+                <h2 class="font-bold">Проверенная система знаний</h2>
+                <p>Описание преимущества</p>
+            </div>
+            <div class="custom-bg-pink p-4 rounded">
+                <h2 class="font-bold">Групповой формат занятий</h2>
+                <p>Описание преимущества</p>
+            </div>
+            <div class="custom-bg-light p-4 rounded">
+                <h2 class="font-bold">Постоянная связь</h2>
+                <p>Описание преимущества</p>
+            </div>
+            <div class="custom-bg-blue p-4 rounded">
+                <h2 class="font-bold">Ученики</h2>
+                <p>Описание преимущества</p>
+            </div>
+            <div class="custom-bg-pink p-4 rounded">
+                <h2 class="font-bold">Учись в Mathschool и выиграй</h2>
+                <p>10 000 РУБЛЕЙ</p>
+            </div>
+        </section>
+
+        <!-- Form Section -->
+        <section class="custom-bg-blue text-white p-8 rounded m-4">
+            <h2 class="text-2xl font-bold mb-4">Начни готовиться к экзаменам вместе с Mathschool</h2>
+            <form class="space-y-4">
+                <input type="text" placeholder="Имя" class="w-full p-2 rounded custom-text-black">
+                <input type="email" placeholder="Email" class="w-full p-2 rounded custom-text-black">
+                <input type="tel" placeholder="Телефон" class="w-full p-2 rounded custom-text-black">
+                <button class="custom-bg-yellow custom-text-black px-4 py-2 rounded">Отправить</button>
+            </form>
+        </section>
+
+        <!-- Courses Section -->
+        <section class="p-4">
+            <h2 class="text-2xl font-bold mb-4">Выбери подходящий курс</h2>
+            <div class="flex justify-center space-x-4 mb-4">
+                <button class="bg-gray-700 text-white px-4 py-2 rounded">ОГЭ</button>
+                <button class="bg-gray-700 text-white px-4 py-2 rounded">ЕГЭ</button>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="custom-bg-light custom-text-black p-4 rounded">
+                    <h3 class="font-bold">ЕГЭ Базовый</h3>
+                    <ul class="list-disc pl-4">
+                        <li>Курс для сдачи экзамена</li>
+                        <li>Подготовка к ЕГЭ</li>
+                    </ul>
+                    <div class="flex justify-between items-center mt-4">
+                        <span>4 500 Р/мес</span>
+                        <button class="custom-bg-yellow custom-text-black px-4 py-2 rounded">Купить</button>
+                    </div>
+                </div>
+                <div class="custom-bg-light custom-text-black p-4 rounded">
+                    <h3 class="font-bold">ЕГЭ Профиль 1 часть</h3>
+                    <ul class="list-disc pl-4">
+                        <li>Курс для сдачи экзамена</li>
+                        <li>Подготовка к ЕГЭ</li>
+                    </ul>
+                    <div class="flex justify-between items-center mt-4">
+                        <span>4 500 Р/мес</span>
+                        <button class="custom-bg-yellow custom-text-black px-4 py-2 rounded">Купить</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lessons Section -->
+        <section class="p-4">
+            <h2 class="text-2xl font-bold mb-4">Уроки в записи</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="custom-bg-light custom-text-black p-4 rounded">
+                    <h3 class="font-bold">Планиметрия</h3>
+                    <p>999 Р</p>
+                    <button class="custom-bg-yellow custom-text-black px-4 py-2 rounded">Купить</button>
+                </div>
+                <div class="custom-bg-light custom-text-black p-4 rounded">
+                    <h3 class="font-bold">Стереометрия</h3>
+                    <p>999 Р</p>
+                    <button class="custom-bg-yellow custom-text-black px-4 py-2 rounded">Купить</button>
+                </div>
+            </div>
+        </section>
     </div>
-    <div class="right">
-      <span class="text-sm" style="color: #EC4899;">made_in_2024.psd</span>
-      <span class="circle pink"></span>
-    </div>
-  </div>
-
-  <div class="header">
-    <h1>PORFOLIO</h1>
-    <p>Graphic design <span style="float:right;">Illustration</span></p>
-  </div>
-
-  <div class="border-top"></div>
-
-  <div class="container">
-    <div class="card">
-      <div class="hello">Hello</div>
-      <img src="https://placehold.co/150x150" alt="A person sitting and holding a camera" width="150" height="150"/>
-      <h2>About me <i class="fas fa-arrow-right"></i></h2>
-      <p>Hello, I'm Thang. Currently, I am a 4th year student majoring in graphic design at Ho Chi Minh City University of Fine Arts. I have a passion for graphic design and illustration...</p>
-      <a class="download-btn" href="your-cv-file.pdf" download>Download CV</a>
-      <div class="cv">CV</div>
-    </div>
-
-    <div class="card">
-      <h2 class="resume-title">RESUME</h2>
-    </div>
-
-    <div class="card">
-      <h3>Creative Fields <i class="fas fa-arrow-right"></i></h3>
-      <ul>
-        <li>Illustration</li>
-        <li>Branding design</li>
-        <li>Advertising design</li>
-        <li>Layout design</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h3>Software skill <i class="fas fa-arrow-right"></i></h3>
-      <p>AI <i class="fab fa-adobe"></i> PS <i class="fab fa-adobe"></i> Id <i class="fab fa-adobe"></i> Ae <i class="fab fa-adobe"></i></p>
-    </div>
-
-    <div class="card">
-      <h3>Education <i class="fas fa-arrow-right"></i></h3>
-      <p>2000 - present <br>Graphic design at Ho Chi Minh City University of Fine Arts</p>
-    </div>
-
-    <div class="card">
-      <h3>Personal skill <i class="fas fa-arrow-right"></i></h3>
-      <div class="skills-bar">
-        <span>Research</span>
-        <span>Creativity</span>
-        <span>Sketching</span>
-        <span>Teamwork</span>
-      </div>
-      <div class="skills-bar">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
-  </div>
-
-  <footer>
-    <h3>Contact</h3>
-    <p>0760806913</p>
-    <p>lythangthong2109@gmail.com</p>
-    <p>behance.net/thangnguyenn</p>
-    <p>Facebook QR Code:</p>
-    <img src="https://placehold.co/100x100" alt="QR code for Facebook" width="100" height="100"/>
-  </footer>
-
 </body>
 </html>
