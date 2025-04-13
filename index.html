@@ -2,162 +2,334 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mathschool</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Hikmah's</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         body {
             font-family: 'Arial', sans-serif;
-        }
-        .custom-bg {
-            background-color: #ff69b4;
-        }
-        .custom-bg-dark {
             background-color: #000000;
+            margin: 0;
+            padding: 0;
         }
-        .custom-bg-light {
-            background-color: #ffffff;
-        }
-        .custom-bg-pink {
-            background-color: #ff69b4;
-        }
-        .custom-bg-yellow {
-            background-color: #ffff00;
-        }
-        .custom-bg-blue {
-            background-color: #0000ff;
-        }
-        .custom-text-yellow {
-            color: #ffff00;
-        }
-        .custom-text-pink {
-            color: #ff69b4;
-        }
-        .custom-text-blue {
-            color: #0000ff;
-        }
-        .custom-text-white {
+        .container {
+            max-width: 1920px;
+            margin: 0 auto;
+            background-color: #000000;
             color: #ffffff;
         }
-        .custom-text-black {
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 36px;
+        }
+        .header nav a {
+            margin: 0 8px;
+            text-decoration: none;
+            color: #ffffff;
+        }
+        .header button {
+            background-color: #ffff00;
             color: #000000;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+        }
+        .hero {
+            text-align: center;
+            padding: 48px 16px;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+        .hero button {
+            background-color: #ffff00;
+            color: #000000;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+        .hero .dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+        .hero .dots div {
+            width: 12px;
+            height: 12px;
+            background-color: #ffffff;
+            border-radius: 50%;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            padding: 16px;
+        }
+        @media (min-width: 768px) {
+            .features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (min-width: 1024px) {
+            .features {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        .feature {
+            padding: 16px;
+            border-radius: 8px;
+        }
+        .feature.pink {
+            background-color: #ff69b4;
+        }
+        .feature.yellow {
+            background-color: #ffff00;
+        }
+        .feature.blue {
+            background-color: #0000ff;
+        }
+        .feature.white {
+            background-color: #ffffff;
+            color: #000000;
+        }
+        .form-section {
+            background-color: #0000ff;
+            color: #ffffff;
+            padding: 32px;
+            border-radius: 8px;
+            margin: 16px;
+        }
+        .form-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+        }
+        .form-section form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .form-section input {
+            padding: 8px;
+            border-radius: 4px;
+            border: none;
+        }
+        .form-section button {
+            background-color: #ffff00;
+            color: #000000;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+        }
+        .courses {
+            padding: 16px;
+        }
+        .courses h2 {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+        }
+        .courses .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+        .courses .buttons button {
+            background-color: #4a4a4a;
+            color: #ffffff;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+        }
+        .courses .course-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+        @media (min-width: 768px) {
+            .courses .course-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        .course {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 16px;
+            border-radius: 8px;
+        }
+        .course h3 {
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+        }
+        .course ul {
+            list-style-type: disc;
+            padding-left: 16px;
+        }
+        .course .price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 16px;
+        }
+        .course .price button {
+            background-color: #ffff00;
+            color: #000000;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+        }
+        .lessons {
+            padding: 16px;
+        }
+        .lessons h2 {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+        }
+        .lessons .lesson-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+        @media (min-width: 768px) {
+            .lessons .lesson-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        .lesson {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 16px;
+            border-radius: 8px;
+        }
+        .lesson h3 {
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+        }
+        .lesson button {
+            background-color: #ffff00;
+            color: #000000;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
         }
     </style>
 </head>
-<body class="custom-bg">
-    <div class="max-w-screen-xl mx-auto custom-bg-dark text-white">
+<body>
+    <div class="container">
         <!-- Header -->
-        <header class="flex justify-between items-center p-4">
-            <div class="text-2xl font-bold">Mathschool</div>
+        <header class="header">
+            <div class="text-2xl font-bold">Hikmah's Portfolio</div>
             <nav class="hidden md:flex space-x-4">
-                <a href="#" class="hover:underline">Главная</a>
-                <a href="#" class="hover:underline">Курсы</a>
-                <a href="#" class="hover:underline">Отзывы</a>
-                <a href="#" class="hover:underline">Контакты</a>
+                <a href="#" class="hover:underline">Home</a>
+                <a href="#" class="hover:underline">About</a>
+                <a href="#" class="hover:underline">Project</a>
+                <a href="#" class="hover:underline">Contact</a>
             </nav>
-            <button class="custom-bg-yellow custom-text-black px-4 py-2 rounded">Купить курс</button>
         </header>
 
         <!-- Hero Section -->
-        <section class="text-center py-12">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">Онлайн школа огэ/егэ по математике</h1>
-            <button class="custom-bg-yellow custom-text-black px-6 py-3 rounded mb-4">Купить курс</button>
-            <div class="flex justify-center space-x-2">
-                <div class="w-3 h-3 custom-bg-light rounded-full"></div>
-                <div class="w-3 h-3 custom-bg-light rounded-full"></div>
-                <div class="w-3 h-3 custom-bg-light rounded-full"></div>
+        <section class="hero">
+            <h1>PORTFOLIO</h1>
+            <button>Start</button>
+            <div class="dots">
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
         </section>
 
         <!-- Features Section -->
-        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
-            <div class="custom-bg-pink p-4 rounded">
-                <h2 class="font-bold">Сильные преподаватели</h2>
-                <p>Описание преимущества</p>
+        <section class="features">
+            <div class="feature pink">
+                <h2 class="font-bold">ABOUT</h2>
+                <p>Hello, my name is Hikmah Bachtiarima Dewi. I'm currently a 4th student majoring in multimedia</p>
             </div>
-            <div class="custom-bg-yellow p-4 rounded">
-                <h2 class="font-bold">Проверенная система знаний</h2>
-                <p>Описание преимущества</p>
+            <div class="feature yellow">
+                <h2 class="font-bold">Education</h2>
+                <p>University</p>
             </div>
-            <div class="custom-bg-pink p-4 rounded">
-                <h2 class="font-bold">Групповой формат занятий</h2>
-                <p>Описание преимущества</p>
+            <div class="feature pink">
+                <h2 class="font-bold">Skill</h2>
+                <p>AI PS AE Blender</p>
             </div>
-            <div class="custom-bg-light p-4 rounded">
-                <h2 class="font-bold">Постоянная связь</h2>
-                <p>Описание преимущества</p>
+            <div class="feature white">
+                <h2 class="font-bold">Exprience</h2>
+                <p>Panitia</p>
             </div>
-            <div class="custom-bg-blue p-4 rounded">
-                <h2 class="font-bold">Ученики</h2>
-                <p>Описание преимущества</p>
+            <div class="feature blue">
+                <h2 class="font-bold">Certification</h2>
+                <p>Animator</p>
             </div>
-            <div class="custom-bg-pink p-4 rounded">
-                <h2 class="font-bold">Учись в Mathschool и выиграй</h2>
-                <p>10 000 РУБЛЕЙ</p>
+            <div class="feature pink">
+              <h2 class="font-bold">Contact!</h2>
+                <p>@iimaa.zip</p>
+                <p>hbachtiarimadewi@gmail.com</p>
             </div>
         </section>
 
-        <!-- Form Section -->
-        <section class="custom-bg-blue text-white p-8 rounded m-4">
-            <h2 class="text-2xl font-bold mb-4">Начни готовиться к экзаменам вместе с Mathschool</h2>
-            <form class="space-y-4">
-                <input type="text" placeholder="Имя" class="w-full p-2 rounded custom-text-black">
-                <input type="email" placeholder="Email" class="w-full p-2 rounded custom-text-black">
-                <input type="tel" placeholder="Телефон" class="w-full p-2 rounded custom-text-black">
-                <button class="custom-bg-yellow custom-text-black px-4 py-2 rounded">Отправить</button>
-            </form>
-        </section>
+        
 
         <!-- Courses Section -->
-        <section class="p-4">
-            <h2 class="text-2xl font-bold mb-4">Выбери подходящий курс</h2>
-            <div class="flex justify-center space-x-4 mb-4">
-                <button class="bg-gray-700 text-white px-4 py-2 rounded">ОГЭ</button>
-                <button class="bg-gray-700 text-white px-4 py-2 rounded">ЕГЭ</button>
+        <section class="courses">
+			<button>Project</button>
+            <h2>3D Render</h2>
+            <div class="buttons">
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="custom-bg-light custom-text-black p-4 rounded">
-                    <h3 class="font-bold">ЕГЭ Базовый</h3>
-                    <ul class="list-disc pl-4">
-                        <li>Курс для сдачи экзамена</li>
-                        <li>Подготовка к ЕГЭ</li>
+            <div class="course-list">
+                <div class="course">
+                    <h3>AA</h3>
+                    <ul>
+                        <li>BB</li>
+                        <li>BB</li>
                     </ul>
-                    <div class="flex justify-between items-center mt-4">
-                        <span>4 500 Р/мес</span>
-                        <button class="custom-bg-yellow custom-text-black px-4 py-2 rounded">Купить</button>
+                    <div class="price">
+                        <span>Rate</span>
+                        <button>Comment</button>
                     </div>
                 </div>
-                <div class="custom-bg-light custom-text-black p-4 rounded">
-                    <h3 class="font-bold">ЕГЭ Профиль 1 часть</h3>
-                    <ul class="list-disc pl-4">
+                <div class="course">
+                    <h3>BB</h3>
+                    <ul>
                         <li>Курс для сдачи экзамена</li>
                         <li>Подготовка к ЕГЭ</li>
                     </ul>
-                    <div class="flex justify-between items-center mt-4">
-                        <span>4 500 Р/мес</span>
-                        <button class="custom-bg-yellow custom-text-black px-4 py-2 rounded">Купить</button>
+                    <div class="price">
+                        <span>Rate</span>
+                        <button>Comment</button>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Lessons Section -->
-        <section class="p-4">
-            <h2 class="text-2xl font-bold mb-4">Уроки в записи</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="custom-bg-light custom-text-black p-4 rounded">
-                    <h3 class="font-bold">Планиметрия</h3>
+        <section class="lessons">
+            <h2>Photography</h2>
+            <div class="lesson-list">
+                <div class="lesson">
+                    <h3>BB</h3>
                     <p>999 Р</p>
-                    <button class="custom-bg-yellow custom-text-black px-4 py-2 rounded">Купить</button>
+                    <button>Comment</button>
                 </div>
-                <div class="custom-bg-light custom-text-black p-4 rounded">
-                    <h3 class="font-bold">Стереометрия</h3>
+                <div class="lesson">
+                    <h3>AA</h3>
                     <p>999 Р</p>
-                    <button class="custom-bg-yellow custom-text-black px-4 py-2 rounded">Купить</button>
+                    <button>Comment</button>
                 </div>
             </div>
         </section>
+		
+		<!-- Form Section -->
+        <footer class="form-section">
+            <h2>Get in Touch</h2>
+            <form>
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+                <input type="tel" placeholder="Comment">
+                <button>Send</button>
+            </form>
+        </footer>
     </div>
 </body>
 </html>
