@@ -1,26 +1,20 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Portfolio</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
   <style>
     body {
+      background-color: #BFDBFE;
+      font-family: 'Roboto', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #DBEAFE;
-      font-family: 'Roboto', sans-serif;
       display: flex;
       flex-direction: column;
-      align-items: center;
       min-height: 100vh;
-    }
-
-    .header-wrapper {
-      width: 100%;
-      max-width: 1200px;
-      margin-top: 20px;
-      text-align: center;
     }
 
     .file-bar {
@@ -28,247 +22,216 @@
       justify-content: space-between;
       align-items: center;
       background-color: #BFDBFE;
-      padding: 10px;
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem 0.5rem 0 0;
     }
 
-    .file-bar-left, .file-bar-right {
+    .file-bar .left, .file-bar .right {
       display: flex;
       align-items: center;
-      gap: 10px;
-      font-size: 14px;
+      gap: 0.5rem;
     }
 
-    .dot {
+    .file-bar span.circle {
       width: 12px;
       height: 12px;
       border-radius: 50%;
       display: inline-block;
     }
 
-    .dot-blue {
-      background-color: #3B82F6;
-    }
+    .file-bar .blue { background-color: #3B82F6; }
+    .file-bar .pink { background-color: #EC4899; }
 
-    .dot-pink {
-      background-color: #EC4899;
-    }
-
-    .header-content {
-      background-color: white;
-      padding: 40px;
-      border-bottom-left-radius: 10px;
-      border-bottom-right-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      position: relative;
-    }
-
-    .header-content h1 {
-      font-size: 60px;
-      font-family: 'Pacifico', cursive;
-      background: linear-gradient(to right, #EC4899, #3B82F6);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      position: relative;
-      display: inline-block;
-    }
-
-    .header-content h1 i,
-    .header-content h1 img {
-      position: absolute;
-    }
-
-    .pointer-icon {
-      top: -30px;
-      left: -30px;
-    }
-
-    .star-icon {
-      top: -30px;
-      right: 0;
-    }
-
-    .cloud-icon-right {
-      bottom: -30px;
-      right: 0;
-    }
-
-    .cloud-icon-left {
-      bottom: 0;
-      left: 0;
-    }
-
-    .header-content p {
-      margin-top: 20px;
-      font-size: 18px;
-      color: #1E40AF;
-    }
-
-    .main-container {
-      max-width: 900px;
-      width: 100%;
-      margin-top: 40px;
-      padding: 20px;
-    }
-
-    .top-section {
+    .header {
       background-color: #1E3A8A;
-      color: #E5E7EB;
       text-align: center;
-      padding: 40px 0;
-      border-radius: 10px;
+      padding: 2rem 0;
     }
 
-    .top-section h1 {
-      font-size: 60px;
-      margin: 0;
+    .header h1 {
+      font-size: 4rem;
+      color: #E5E7EB;
       font-weight: bold;
+      margin: 0;
+      font-family: 'Pacifico', cursive;
     }
 
-    .top-section p {
-      margin-top: 10px;
-      font-size: 20px;
-    }
-
-    .top-section p span {
-      float: right;
+    .header p {
+      color: #E5E7EB;
+      font-size: 1.25rem;
+      margin-top: 0.5rem;
     }
 
     .border-top {
       border-top: 4px solid black;
-      margin: 30px 0;
+    }
+
+    .container {
+      padding: 2rem;
+      flex: 1;
     }
 
     .card {
       background-color: #F3F4F6;
-      padding: 24px;
-      border-radius: 8px;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      margin-bottom: 30px;
       position: relative;
-    }
-
-    .card img {
-      display: block;
-      margin: 20px auto;
-      border-radius: 50%;
+      margin-bottom: 2rem;
     }
 
     .card h2, .card h3 {
-      font-size: 24px;
+      font-size: 1.5rem;
       font-weight: bold;
-      margin-top: 0;
+      margin: 0;
     }
 
     .card p, .card ul {
-      margin-top: 10px;
-      font-size: 16px;
+      margin-top: 0.5rem;
     }
 
     .card ul {
       list-style-type: disc;
-      padding-left: 20px;
+      padding-left: 1.5rem;
     }
 
-    .hello {
+    .card .hello {
       position: absolute;
       top: 0;
       left: 0;
       background-color: #FBBF24;
-      padding: 4px 16px;
-      border-bottom-right-radius: 8px;
+      padding: 0.25rem 1rem;
+      border-bottom-right-radius: 0.5rem;
       font-weight: bold;
     }
 
-    .cv {
+    .card .cv {
       position: absolute;
       top: 0;
       right: 0;
       background-color: #1E3A8A;
-      padding: 4px 16px;
-      border-bottom-left-radius: 8px;
+      padding: 0.25rem 1rem;
+      border-bottom-left-radius: 0.5rem;
       color: white;
       font-weight: bold;
     }
 
+    .card img {
+      display: block;
+      margin: 1rem auto;
+      border-radius: 50%;
+    }
+
     .resume-title {
-      font-size: 32px;
+      font-size: 2.5rem;
       color: #1E3A8A;
       font-weight: bold;
     }
 
-    .skills-bar-labels {
+    .skills-bar {
       display: flex;
       justify-content: space-between;
-      font-weight: 600;
-      margin-top: 10px;
+      margin-top: 0.5rem;
     }
 
-    .skills-bar-graph {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 10px;
-    }
-
-    .skills-bar-graph div {
+    .skills-bar div {
       width: 24%;
-      height: 8px;
+      height: 0.5rem;
       background-color: black;
+    }
+
+    .skills-bar div + div {
+      margin-left: 0.25rem;
+    }
+
+    .download-btn {
+      margin-top: 1rem;
+      display: inline-block;
+      background-color: #1E3A8A;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .download-btn:hover {
+      background-color: #374151;
+    }
+
+    footer {
+      background-color: #1E3A8A;
+      color: #E5E7EB;
+      text-align: center;
+      padding: 1.5rem 1rem;
+    }
+
+    footer h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    footer p {
+      margin: 0.25rem 0;
+    }
+
+    footer img {
+      margin-top: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 2.5rem;
+      }
+
+      .container {
+        padding: 1rem;
+      }
+
+      .skills-bar {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .skills-bar div {
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <div class="header-wrapper">
-    <div class="file-bar">
-      <div class="file-bar-left">
-        <span class="dot dot-blue"></span>
-        <span class="text-sm">kayejiane_portfolio.psd</span>
-      </div>
-      <div class="file-bar-right">
-        <span class="text-sm" style="color: #EC4899;">made_in_2024.psd</span>
-        <span class="dot dot-pink"></span>
-      </div>
+  <div class="file-bar">
+    <div class="left">
+      <span class="circle blue"></span>
+      <span class="text-sm">kayejiane_portfolio.psd</span>
     </div>
-    <div class="header-content">
-      <h1>
-        Portfolio
-        <i class="fas fa-mouse-pointer text-pink-500 pointer-icon" style="color: #EC4899;"></i>
-        <img src="https://placehold.co/20x20" alt="decorative star" class="star-icon">
-        <img src="https://placehold.co/20x20" alt="decorative cloud" class="cloud-icon-right">
-        <img src="https://placehold.co/20x20" alt="decorative cloud" class="cloud-icon-left">
-      </h1>
-      <p>KAYE JIANE MATULAC / 2024 / GRAPHIC DESIGN</p>
+    <div class="right">
+      <span class="text-sm" style="color: #EC4899;">made_in_2024.psd</span>
+      <span class="circle pink"></span>
     </div>
   </div>
 
-  <!-- Main Content -->
-  <div class="main-container">
+  <div class="header">
+    <h1>PORFOLIO</h1>
+    <p>Graphic design <span style="float:right;">Illustration</span></p>
+  </div>
 
-    <div class="top-section">
-      <h1>PORTFOLIO</h1>
-      <p>Graphic design <span>Illustration</span></p>
-    </div>
+  <div class="border-top"></div>
 
-    <div class="border-top"></div>
-
+  <div class="container">
     <div class="card">
       <div class="hello">Hello</div>
-      <img src="https://placehold.co/150x150" alt="A person holding a camera" width="150" height="150"/>
+      <img src="https://placehold.co/150x150" alt="A person sitting and holding a camera" width="150" height="150"/>
       <h2>About me <i class="fas fa-arrow-right"></i></h2>
-      <p>Hello, I'm Thang. Currently, I am a 4th year student majoring in graphic design at Ho Chi Minh City University of Fine Arts...</p>
+      <p>Hello, I'm Thang. Currently, I am a 4th year student majoring in graphic design at Ho Chi Minh City University of Fine Arts. I have a passion for graphic design and illustration...</p>
+      <a class="download-btn" href="your-cv-file.pdf" download>Download CV</a>
       <div class="cv">CV</div>
     </div>
 
     <div class="card">
       <h2 class="resume-title">RESUME</h2>
-      <div>
-        <h3>Contact <i class="fas fa-arrow-right"></i></h3>
-        <p>0760806913<br/>lythangthong2109@gmail.com<br/>behance.net/thangnguyenn<br/>Facebook QR code:</p>
-        <img src="https://placehold.co/100x100" alt="QR code" width="100" height="100"/>
-      </div>
     </div>
 
     <div class="card">
@@ -282,24 +245,24 @@
     </div>
 
     <div class="card">
-      <h3>Software Skill <i class="fas fa-arrow-right"></i></h3>
+      <h3>Software skill <i class="fas fa-arrow-right"></i></h3>
       <p>AI <i class="fab fa-adobe"></i> PS <i class="fab fa-adobe"></i> Id <i class="fab fa-adobe"></i> Ae <i class="fab fa-adobe"></i></p>
     </div>
 
     <div class="card">
       <h3>Education <i class="fas fa-arrow-right"></i></h3>
-      <p>2000 - present<br/>Graphic design at Ho Chi Minh City University of Fine Arts</p>
+      <p>2000 - present <br>Graphic design at Ho Chi Minh City University of Fine Arts</p>
     </div>
 
     <div class="card">
-      <h3>Personal Skill <i class="fas fa-arrow-right"></i></h3>
-      <div class="skills-bar-labels">
+      <h3>Personal skill <i class="fas fa-arrow-right"></i></h3>
+      <div class="skills-bar">
         <span>Research</span>
         <span>Creativity</span>
         <span>Sketching</span>
         <span>Teamwork</span>
       </div>
-      <div class="skills-bar-graph">
+      <div class="skills-bar">
         <div></div>
         <div></div>
         <div></div>
@@ -308,6 +271,14 @@
     </div>
   </div>
 
+  <footer>
+    <h3>Contact</h3>
+    <p>0760806913</p>
+    <p>lythangthong2109@gmail.com</p>
+    <p>behance.net/thangnguyenn</p>
+    <p>Facebook QR Code:</p>
+    <img src="https://placehold.co/100x100" alt="QR code for Facebook" width="100" height="100"/>
+  </footer>
+
 </body>
 </html>
-
