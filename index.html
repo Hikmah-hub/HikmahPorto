@@ -1,47 +1,313 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Saya</title>
-    <link rel="stylesheet" href="styles.css">
+  <title>Portfolio</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #DBEAFE;
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .header-wrapper {
+      width: 100%;
+      max-width: 1200px;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .file-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #BFDBFE;
+      padding: 10px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    .file-bar-left, .file-bar-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .dot-blue {
+      background-color: #3B82F6;
+    }
+
+    .dot-pink {
+      background-color: #EC4899;
+    }
+
+    .header-content {
+      background-color: white;
+      padding: 40px;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .header-content h1 {
+      font-size: 60px;
+      font-family: 'Pacifico', cursive;
+      background: linear-gradient(to right, #EC4899, #3B82F6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      position: relative;
+      display: inline-block;
+    }
+
+    .header-content h1 i,
+    .header-content h1 img {
+      position: absolute;
+    }
+
+    .pointer-icon {
+      top: -30px;
+      left: -30px;
+    }
+
+    .star-icon {
+      top: -30px;
+      right: 0;
+    }
+
+    .cloud-icon-right {
+      bottom: -30px;
+      right: 0;
+    }
+
+    .cloud-icon-left {
+      bottom: 0;
+      left: 0;
+    }
+
+    .header-content p {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #1E40AF;
+    }
+
+    .main-container {
+      max-width: 900px;
+      width: 100%;
+      margin-top: 40px;
+      padding: 20px;
+    }
+
+    .top-section {
+      background-color: #1E3A8A;
+      color: #E5E7EB;
+      text-align: center;
+      padding: 40px 0;
+      border-radius: 10px;
+    }
+
+    .top-section h1 {
+      font-size: 60px;
+      margin: 0;
+      font-weight: bold;
+    }
+
+    .top-section p {
+      margin-top: 10px;
+      font-size: 20px;
+    }
+
+    .top-section p span {
+      float: right;
+    }
+
+    .border-top {
+      border-top: 4px solid black;
+      margin: 30px 0;
+    }
+
+    .card {
+      background-color: #F3F4F6;
+      padding: 24px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+      position: relative;
+    }
+
+    .card img {
+      display: block;
+      margin: 20px auto;
+      border-radius: 50%;
+    }
+
+    .card h2, .card h3 {
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 0;
+    }
+
+    .card p, .card ul {
+      margin-top: 10px;
+      font-size: 16px;
+    }
+
+    .card ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
+    .hello {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: #FBBF24;
+      padding: 4px 16px;
+      border-bottom-right-radius: 8px;
+      font-weight: bold;
+    }
+
+    .cv {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: #1E3A8A;
+      padding: 4px 16px;
+      border-bottom-left-radius: 8px;
+      color: white;
+      font-weight: bold;
+    }
+
+    .resume-title {
+      font-size: 32px;
+      color: #1E3A8A;
+      font-weight: bold;
+    }
+
+    .skills-bar-labels {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+
+    .skills-bar-graph {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+
+    .skills-bar-graph div {
+      width: 24%;
+      height: 8px;
+      background-color: black;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Nama Anda</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">Tentang Saya</a></li>
-                <li><a href="#projects">Proyek</a></li>
-                <li><a href="#contact">Kontak</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section id="about">
-        <h2>Tentang Saya</h2>
-        <p>Deskripsi singkat tentang diri Anda, latar belakang, dan keterampilan.</p>
-    </section>
+  <!-- Header -->
+  <div class="header-wrapper">
+    <div class="file-bar">
+      <div class="file-bar-left">
+        <span class="dot dot-blue"></span>
+        <span class="text-sm">kayejiane_portfolio.psd</span>
+      </div>
+      <div class="file-bar-right">
+        <span class="text-sm" style="color: #EC4899;">made_in_2024.psd</span>
+        <span class="dot dot-pink"></span>
+      </div>
+    </div>
+    <div class="header-content">
+      <h1>
+        Portfolio
+        <i class="fas fa-mouse-pointer text-pink-500 pointer-icon" style="color: #EC4899;"></i>
+        <img src="https://placehold.co/20x20" alt="decorative star" class="star-icon">
+        <img src="https://placehold.co/20x20" alt="decorative cloud" class="cloud-icon-right">
+        <img src="https://placehold.co/20x20" alt="decorative cloud" class="cloud-icon-left">
+      </h1>
+      <p>KAYE JIANE MATULAC / 2024 / GRAPHIC DESIGN</p>
+    </div>
+  </div>
 
-    <section id="projects">
-        <h2>Proyek</h2>
-        <div class="project">
-            <h3>Judul Proyek 1</h3>
-            <p>Deskripsi proyek 1.</p>
-        </div>
-        <div class="project">
-            <h3>Judul Proyek 2</h3>
-            <p>Deskripsi proyek 2.</p>
-        </div>
-    </section>
+  <!-- Main Content -->
+  <div class="main-container">
 
-    <section id="contact">
-        <h2>Kontak</h2>
-        <p>Email: <a href="mailto:email@anda.com">email@anda.com</a></p>
-    </section>
+    <div class="top-section">
+      <h1>PORTFOLIO</h1>
+      <p>Graphic design <span>Illustration</span></p>
+    </div>
 
-    <footer>
-        <p>&copy; 2023 Nama Anda</p>
-    </footer>
+    <div class="border-top"></div>
+
+    <div class="card">
+      <div class="hello">Hello</div>
+      <img src="https://placehold.co/150x150" alt="A person holding a camera" width="150" height="150"/>
+      <h2>About me <i class="fas fa-arrow-right"></i></h2>
+      <p>Hello, I'm Thang. Currently, I am a 4th year student majoring in graphic design at Ho Chi Minh City University of Fine Arts...</p>
+      <div class="cv">CV</div>
+    </div>
+
+    <div class="card">
+      <h2 class="resume-title">RESUME</h2>
+      <div>
+        <h3>Contact <i class="fas fa-arrow-right"></i></h3>
+        <p>0760806913<br/>lythangthong2109@gmail.com<br/>behance.net/thangnguyenn<br/>Facebook QR code:</p>
+        <img src="https://placehold.co/100x100" alt="QR code" width="100" height="100"/>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Creative Fields <i class="fas fa-arrow-right"></i></h3>
+      <ul>
+        <li>Illustration</li>
+        <li>Branding design</li>
+        <li>Advertising design</li>
+        <li>Layout design</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Software Skill <i class="fas fa-arrow-right"></i></h3>
+      <p>AI <i class="fab fa-adobe"></i> PS <i class="fab fa-adobe"></i> Id <i class="fab fa-adobe"></i> Ae <i class="fab fa-adobe"></i></p>
+    </div>
+
+    <div class="card">
+      <h3>Education <i class="fas fa-arrow-right"></i></h3>
+      <p>2000 - present<br/>Graphic design at Ho Chi Minh City University of Fine Arts</p>
+    </div>
+
+    <div class="card">
+      <h3>Personal Skill <i class="fas fa-arrow-right"></i></h3>
+      <div class="skills-bar-labels">
+        <span>Research</span>
+        <span>Creativity</span>
+        <span>Sketching</span>
+        <span>Teamwork</span>
+      </div>
+      <div class="skills-bar-graph">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
+
