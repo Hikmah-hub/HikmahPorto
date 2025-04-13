@@ -9,7 +9,7 @@
             font-family: 'Arial', sans-serif;
             background-color: #000000;
             margin: 0;
-            padding: 0;
+			
         }
         .container {
             max-width: 1920px;
@@ -62,39 +62,7 @@
             background-color: #ffffff;
             border-radius: 50%;
         }
-        .features {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 16px;
-            padding: 16px;
-        }
-        @media (min-width: 768px) {
-            .features {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        @media (min-width: 1024px) {
-            .features {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        .feature {
-            padding: 16px;
-            border-radius: 8px;
-        }
-        .feature.pink {
-            background-color: #ff69b4;
-        }
-        .feature.yellow {
-            background-color: #ffff00;
-        }
-        .feature.blue {
-            background-color: #0000ff;
-        }
-        .feature.white {
-            background-color: #ffffff;
-            color: #000000;
-        }
+        
         .form-section {
             background-color: #0000ff;
             color: #ffffff;
@@ -216,18 +184,108 @@
         }
 		
 		.photo-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-    margin-top: 16px;
-}
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 8px;
+			margin-top: 16px;
+		}
 
-.photo-grid img {
-    width: 100%;
-    height: 120px;
-    border-radius: 8px;
-    object-fit: cover;
-}
+		.photo-grid img {
+			width: 100%;
+			height: 120px;
+			border-radius: 8px;
+			object-fit: cover;
+		}
+
+		.notepad {
+		  background: white;
+		  border-radius: 10px;
+		  padding: 1rem;
+		  width: 1457px;
+		  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+		  position: relative;
+		  margin: 15px;
+		}
+
+		.holes {
+		  display: flex;
+		  justify-content: space-between;
+		  padding: 0 1rem;
+		  margin-bottom: 1rem;
+		}
+
+		.holes span {
+		  width: 14px;
+		  height: 14px;
+		  background: black;
+		  border-radius: 50%;
+		  display: inline-block;
+		}
+
+		.features {
+		  display: grid;
+		  grid-template-columns: repeat(4, 1fr);
+		  gap: 1rem;
+		  flex-wrap: wrap;
+		}
+
+		.card {
+		  padding: 1rem;
+		  border-radius: 12px;
+		  color: #000;
+		  font-weight: bold;
+		  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+		  min-height: 100px;
+		  display: flex;
+		  align-items: center;
+		  justify-content: center;
+		  text-align: center;
+		}
+
+		.pink {
+		  background-color: #FF69B4;
+		  color: white;
+		}
+
+		.yellow {
+		  background-color: #FFFF66;
+		}
+
+		.white {
+		  background-color: #ffffff;
+		}
+
+		.blue {
+		  background-color: #ADD8E6;
+		}
+
+		.big {
+		  grid-column: span 2;
+		  font-size: 1.2rem;
+		  position: relative;
+		}
+
+		.price {
+		  display: block;
+		  margin-top: 1rem;
+		  font-size: 1.5rem;
+		  color: #fff;
+		  background: #ff1493;
+		  padding: 0.5rem 1rem;
+		  border-radius: 12px;
+		}
+
+		.icon {
+		  font-size: 1.5rem;
+		  margin-top: 0.5rem;
+		}
+
+		.bottom-heart {
+		  position: absolute;
+		  bottom: 10px;
+		  right: 10px;
+		  font-size: 1.5rem;
+		}
 
 		
     </style>
@@ -247,7 +305,7 @@
 
         <!-- Hero Section -->
         <section class="hero">
-            <h1>PORTFOLIO</h1>
+            <h1>PORTFOLIO🎨</h1>
             <button>Start</button>
             <div class="dots">
                 <div></div>
@@ -257,110 +315,105 @@
         </section>
 
         <!-- Features Section -->
-        <section class="features">
-            <div class="feature pink">
-                <h2 class="font-bold">ABOUT</h2>
-                <p>Hello, my name is Hikmah Bachtiarima Dewi. I'm currently a 4th student majoring in multimedia</p>
-            </div>
-            <div class="feature yellow">
-                <h2 class="font-bold">Education</h2>
-                <p>University</p>
-            </div>
-            <div class="feature pink">
-                <h2 class="font-bold">Skill</h2>
-                <p>AI PS AE Blender</p>
-            </div>
-            <div class="feature white">
-                <h2 class="font-bold">Exprience</h2>
-                <p>Panitia</p>
-            </div>
-            <div class="feature blue">
-                <h2 class="font-bold">Certification</h2>
-                <p>Animator</p>
-            </div>
-            <div class="feature pink">
-              <h2 class="font-bold">Contact!</h2>
-                <p>@iimaa.zip</p>
-                <p>hbachtiarimadewi@gmail.com</p>
-            </div>
-        </section>
+        <section class="notepad">
+    <div class="holes">
+      <!-- 13 black circles -->
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <div class="features">
+      <div class="card pink">
+        Платформа GetCourse
+        <div class="icon">🌈</div>
+      </div>
+      <div class="card white">Сильные преподаватели</div>
+      <div class="card yellow">
+        Проверенная система знаний
+        <div class="icon">🌸</div>
+      </div>
+      <div class="card white">Групповой формат занятий</div>
+      <div class="card white">Постоянная связь</div>
+      <div class="card blue">
+        Умения
+        <div class="icon">⭐️</div>
+      </div>
+      <div class="card pink big">
+        Учись в Mathschool и выиграй
+        <br><span class="price">10 000 РУБЛЕЙ</span>
+        <div class="icon bottom-heart">💛</div>
+      </div>
+    </div>
+  </section>
 
       <!-- Courses Section -->
         <section class="courses">
 			<button>Project</button>
-            <h2>3D Render</h2>
+            <h2>3D Render🏢</h2>
             <div class="buttons">
             </div>
             <div class="course-list">
                 <div class="course">
                     <h3>IoT</h3>
                     <div class="photo-grid">
-        				<img src="[HOME AUTOMATION.png]" alt="Photo 1">
-        				<img src="https://source.unsplash.com/310x200/?photo,art" alt="Photo 2">
-        				<img src="https://source.unsplash.com/311x200/?urban,photography" alt="Photo 3">
-        				<img src="https://source.unsplash.com/312x200/?portrait,photo" alt="Photo 4">
-        				<img src="https://source.unsplash.com/313x200/?camera,art" alt="Photo 5">
-        				<img src="https://source.unsplash.com/314x200/?nature,photography" alt="Photo 6">
+       				  <img src="../../../../../(SCHOOL)/(DOCUMENT)/WORK/PKL/CREATION/3D/IWK/HOME AUTOMATION/[RENDER]/(VIEW FRONT)/[HOME AUTOMATION].png" alt="Photo 1">
+       				  <img src="../../../../../(SCHOOL)/(DOCUMENT)/WORK/PKL/CREATION/3D/IWK/SMART WATERING/[RENDER]/PICT/[SMART WATERING].png" alt="Photo 2">
+       				  <img src="../../../../../(SCHOOL)/(DOCUMENT)/WORK/PKL/CREATION/3D/PROJECT/ROAD MONITORING/[RENDER]/ROAD MONITORING 1.png" alt="Photo 3">
+       				  <img src="../../../../../(SCHOOL)/(DOCUMENT)/WORK/PKL/CREATION/3D/PROJECT/ROAD MONITORING/[RENDER]/ROAD MONITORING 2.png" alt="Photo 4">
+       				  <img src="../../../../../(SCHOOL)/(DOCUMENT)/WORK/PKL/CREATION/3D/PROJECT/SENSOR BANJIR & PJU/SENSOR BANJIR/[RENDER]/SENSOR BANJIR 2.png" alt="Photo 5">
+       				  <img src="../../../../../(SCHOOL)/(DOCUMENT)/WORK/PKL/CREATION/3D/PROJECT/SENSOR BANJIR & PJU/SENSOR BANJIR/[RENDER]/SENSOR BANJIR 3.png" alt="Photo 6">
     				</div>
-                    <div class="price">
-                        <span>Rate</span>
-                        <button>Comment</button>
-                    </div>
                 </div>
                 <div class="course">
                     <h3>Apartment</h3>
-					<div class="photo-grid">
-       				  	<img src="APARTEMEN (ENVIRONMENT 1).png" alt="Render 1">
-        				<img src="APARTEMEN (ENVIRONMENT 2).png" alt="Render 2">
-        				<img src="APARTEMEN 1 (LOBBY).png" alt="Render 3">
-        				<img src="APARTEMEN 3 (LOBBY).png" alt="Render 4">
-        				<img src="APARTEMEN 4 (LOBBY).png" alt="Render 5">
-				 	<img src="APARTMENT 6 (LOBBY)" alt="Render 6">
+				  <div class="photo-grid">
+			  	    <img src="../../../../../(SCHOOL)/(DOCUMENT)/WORK/PKL/CREATION/3D/APARTMENT/[RENDER]/APARTEMEN (ENVIRONMENT 1).png" alt="Render 1">
+   				    <img src="../../../../../(SCHOOL)/(DOCUMENT)/WORK/PKL/CREATION/3D/APARTMENT/[RENDER]/APARTEMEN (ENVIRONMENT 2).png" alt="Render 2">
+   				    <img src="../../../../../(SCHOOL)/(DOCUMENT)/WORK/PKL/CREATION/3D/APARTMENT/[RENDER]/APARTEMEN 1 (LOBBY).png" alt="Render 3">
+   				    <img src="../../../../../(SCHOOL)/(DOCUMENT)/WORK/PKL/CREATION/3D/APARTMENT/[RENDER]/APARTEMEN 3 (LOBBY).png" alt="Render 4">
+   				    <img src="../../../../../(SCHOOL)/(DOCUMENT)/WORK/PKL/CREATION/3D/APARTMENT/[RENDER]/APARTEMEN 4 (LOBBY).png" alt="Render 5">
+		 		    <img src="../../../../../(SCHOOL)/(DOCUMENT)/WORK/PKL/CREATION/3D/APARTMENT/[RENDER]/APARTEMEN 6 (LOBBY).png" alt="Render 6">
 					</div>
-                    <div class="price">
-                        <span>Rate</span>
-                        <button>Comment</button>
-                    </div>
                 </div>
             </div>
         </section>
 	  
+	  
 <!-- Lessons Section -->
         <section class="lessons">
-            <h2>Photography</h2>
+            <h2>Photography📸</h2>
           <div class="lesson-list">
 				
             <div class="lesson">
-                    <h3>BB</h3>
+                    <h3>Nature</h3>
 					<div class="photo-grid">
-        				<img src="https://source.unsplash.com/309x200/?photo,street" alt="Photo 1">
-        				<img src="https://source.unsplash.com/310x200/?photo,art" alt="Photo 2">
-        				<img src="https://source.unsplash.com/311x200/?urban,photography" alt="Photo 3">
-        				<img src="https://source.unsplash.com/312x200/?portrait,photo" alt="Photo 4">
-        				<img src="https://source.unsplash.com/313x200/?camera,art" alt="Photo 5">
-        				<img src="https://source.unsplash.com/314x200/?nature,photography" alt="Photo 6">
+       				  <img src="../../../../../[IMA] DOCUMENT/[PHOTO]/01/DSC_0039.JPG" alt="Photo 1">
+       				  <img src="../../../../../[IMA] DOCUMENT/[PHOTO]/01/DSC_0106.JPG" alt="Photo 2">
+       				  <img src="../../../../../[IMA] DOCUMENT/[PHOTO]/pt 999/DSC_0002.JPG" alt="Photo 3">
+       				  <img src="../../../../../[IMA] DOCUMENT/[PHOTO]/pt 999/DSC_0028.JPG" alt="Photo 4">
+       				  <img src="../../../../../[IMA] DOCUMENT/[PHOTO]/pt 999/DSC_0016.JPG" alt="Photo 5">
+       				  <img src="../../../../../[IMA] DOCUMENT/FRIENDS/DSC_0075.JPG" alt="Photo 6">
 					</div>
-                    <button>Comment</button>
-                </div>
+                    
+            </div>
 				
             <div class="lesson">
-                    <h3>AA</h3>
+                    <h3>Human Interest</h3>
 					<div class="photo-grid">
-        				<img src="https://source.unsplash.com/309x200/?photo,street" alt="Photo 1">
-        				<img src="https://source.unsplash.com/310x200/?photo,art" alt="Photo 2">
-        				<img src="https://source.unsplash.com/311x200/?urban,photography" alt="Photo 3">
-        				<img src="https://source.unsplash.com/312x200/?portrait,photo" alt="Photo 4">
-        				<img src="https://source.unsplash.com/313x200/?camera,art" alt="Photo 5">
-        				<img src="https://source.unsplash.com/314x200/?nature,photography" alt="Photo 6">
+        				<img src="../../../../SEMESTER 3/FOTOGRAFI DASAR/[TUGAS]/INDIVIDU/[03] KONSEP/DSC_0480.JPG" alt="Photo 1">
+        				<img src="../../../../SEMESTER 3/FOTOGRAFI DASAR/[TUGAS]/INDIVIDU/[03] KONSEP/DSC_0466.JPG" alt="Photo 2">
+        				<img src="../../../../SEMESTER 3/FOTOGRAFI DASAR/[TUGAS]/INDIVIDU/[04] WISUDA/DSC_0550.JPG"  alt="Photo 3">
+        				<img src="../../../../SEMESTER 3/FOTOGRAFI DASAR/[TUGAS]/INDIVIDU/[04] WISUDA/DSC_0578.JPG" alt="Photo 4">
+        				<img src="../../../../SEMESTER 3/FOTOGRAFI DASAR/[TUGAS]/INDIVIDU/[06] PILKADA/DSC_0642.JPG" alt="Photo 5">
+        				<img src="../../../../SEMESTER 3/FOTOGRAFI DASAR/[TUGAS]/INDIVIDU/[06] PILKADA/DSC_0645.JPG" alt="Photo 6">
     				</div>
-                    <button>Comment</button>
-                </div>
+            </div>
             </div>
         </section>
 		
 		<!-- Form Section -->
         <footer class="form-section">
-            <h2>Get in Touch</h2>
+            <h2>Get in Touch👋</h2>
             <form>
                 <input type="text" placeholder="Name">
                 <input type="email" placeholder="Email">
