@@ -7,6 +7,9 @@
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
 
     <style>
+	html {
+        scroll-behavior: smooth;
+        }
         body {
             font-family: 'Arial', sans-serif;
             background-color: #000000;
@@ -343,6 +346,43 @@
 			gap: 8px;
 			margin-top: 16px;
 		}
+	    img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    img:hover {
+      transform: scale(1.05);
+    }
+
+	    .hamburger {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  #nav-menu {
+    display: none;
+    flex-direction: column;
+    gap: 16px;
+    background-color: #111;
+    padding: 16px;
+    margin-top: 16px;
+  }
+
+  #nav-menu.show {
+    display: flex;
+  }
+}
     </style>
 </head>
 <body>
@@ -350,11 +390,11 @@
         <!-- Header -->
         <header class="header">
             <div class="text-2xl font-bold">Hikmah's Portfolio</div>
-            <nav class="hidden md:flex space-x-4">
-                <a href="#hero" class="hover:underline">Home</a>
-                <a href="#about" class="hover:underline">About</a>
-                <a href="#project" class="hover:underline">Project</a>
-                <a href="#contact" class="hover:underline">Contact</a>
+             <nav id="nav-menu" class="hidden md:flex space-x-4">
+  			<a href="#hero" class="hover:underline">Home</a>
+  			<a href="#about" class="hover:underline">About</a>
+			<a href="#project" class="hover:underline">Project</a>
+  			<a href="#contact" class="hover:underline">Contact</a>
             </nav>
         </header>
 
